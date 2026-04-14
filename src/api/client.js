@@ -3,7 +3,12 @@ import axios from 'axios'
 
 const BASE = import.meta.env.VITE_API_URL || '/api'
 
-const api = axios.create({ baseURL: BASE, timeout: 30000 })
+const api = axios.create({ 
+    baseURL: BASE, 
+    timeout: 30000,
+    headers: {
+        'Content-Type' : 'application/json'
+    } })
 
 // ── User ──────────────────────────────────────────────────
 export const getUser         = (id)         => api.get(`/user/${id}`)
