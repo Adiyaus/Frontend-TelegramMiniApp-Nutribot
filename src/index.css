@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg:        #080B14;
+  --bg2:       #0D1120;
+  --surface:   rgba(255,255,255,0.04);
+  --glass:     rgba(255,255,255,0.08);
+  --border:    rgba(255,255,255,0.08);
+  --brand:     #00E5A0;
+  --brand-dim: rgba(0,229,160,0.15);
+  --warn:      #FF6B35;
+  --warn-dim:  rgba(255,107,53,0.15);
+  --text:      #F0F4FF;
+  --muted:     rgba(240,244,255,0.45);
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--glass); border-radius: 99px; }
+
+/* Glass card */
+.glass-card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+}
+
+/* Brand glow */
+.brand-glow { box-shadow: 0 0 24px rgba(0,229,160,0.3); }
+
+/* Active press scale */
+.pressable { transition: transform 0.1s ease; }
+.pressable:active { transform: scale(0.96); }
