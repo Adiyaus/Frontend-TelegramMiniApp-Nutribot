@@ -18,7 +18,11 @@ export default function Dashboard() {
   const [loading,  setLoading]  = useState(true)
 
   const load = async () => {
-    if (!telegramId) return
+    if (!telegramId) {
+      console.log('[Dashboard] telegramId masih null, skip fetch')
+      return
+    }
+    console.log('[Dashboard] Fetching data untuk telegramId:', telegramId)
     try {
       const [sumRes, strRes] = await Promise.all([
         getUserSummary(telegramId),
